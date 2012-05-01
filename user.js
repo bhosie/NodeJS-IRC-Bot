@@ -101,12 +101,12 @@ User.prototype.part = function(/* string or Channel object */ channel) {
     }
 };
 
-User.prototype.quit = function(msg) {
-    var allchans = this.irc.channels,
-        chan,
+User.prototype.quit = function() {
+    var chan,
         idx;
-    for(var chanName in allchans){
-        chan = allchans[chanName];
+
+    for(var i=0;i<this.channels.length;i++){
+        chan = this.channels[i];
         idx = chan.users.indexOf(this.nick);
         if (idx != -1) {
             chan.users.splice(idx, 1);
