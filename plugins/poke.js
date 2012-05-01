@@ -30,7 +30,7 @@ Plugin.prototype.trigPoke = function(msg) {
 
 	var nicks = [];
 	for (var i=0; i < chan.users.length; i++ ) {
-		if (this.irc.nick != chan.users[i]) {
+		if (this.irc.nick.toLowerCase() != chan.users[i].toLowerCase()) {
 			nicks.push(chan.users[i]);
 		}
 	}
