@@ -45,7 +45,7 @@ Plugin.prototype.onNick = function(msg) {
 Plugin.prototype.updateUser = function(msg, argument) {
 
 	var u = this.irc.user(msg.prefix);
-    console.log(u, msg.prefix);
+    // console.log(u, msg.prefix);
 	this.gezien[u.toLowerCase()] = new Date();
 
 	if (typeof argument != 'undefined') {
